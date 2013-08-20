@@ -28,6 +28,9 @@ yum -y install mesa-libEGL-devel mesa-libGL-devel mesa-libGLES-devel\
 yum -y install mtdev-devel pam-devel
 yum -y install libjpeg-devel cairo-devel
 
+# Install FreeRDP build dependancies
+yum -y install zlib-devel openssl-devel
+
 # Install dependancies for wayland-java
 yum -y install maven
 
