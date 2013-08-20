@@ -73,7 +73,7 @@ fi
 
 #==============================================================================
 # Aliases
-VIM_LESS="/usr/share/vim/vim73/macros/less.sh"
+VIM_LESS="/usr/share/vim/vim74/macros/less.sh"
 
 alias less="$VIM_LESS"
 alias vim="vimx"
