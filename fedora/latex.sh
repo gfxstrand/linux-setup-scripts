@@ -16,5 +16,5 @@ yum -y install texlive-latex
 yum -y install perl-MD5 latexmk
 
 # Install various aditional LaTeX packages
-yum -y install texlive-diagmac2
+yum -y install texlive-diagmac2 texlive-amsrefs
 
