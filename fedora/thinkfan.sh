@@ -7,7 +7,9 @@
 #
 # To be run as root.
 
-yum -y install thinkfan
+yum -y install thinkfan cpufrequtils
 cp `dirname $0`/thinkfan.conf /etc/
+cp `dirname $0`/cpupower /etc/sysconfig/
 systemctl enable thinkfan.service
+systemctl enable cpupower.service
 
