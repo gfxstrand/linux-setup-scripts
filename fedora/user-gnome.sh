@@ -15,5 +15,10 @@ yum -y install gnome-tweak-tool epiphany
 yum -y install wine
 
 yum -y install gimp
-yum -y install gnucash
+
+# Unfortunately, I really need some sort of office
+yum -y install libreoffice
+
+# Required for financial and other stuff
+yum -y install gnucash mono-devel
 
