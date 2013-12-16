@@ -15,6 +15,9 @@
 ORACLE_JAVA_PATH=/home/jason/Downloads
 ORACLE_JAVA_VERSION=6u45
 
+# Install my a udev rule for android USB devices
+cp `dirname $0`/51-android.rules /etc/udev/rules.d/
+
 # Install OpenJDK
 yum -y install java-1.7.0-openjdk java-1.7.0-openjdk-devel
 

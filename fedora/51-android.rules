@@ -1,0 +1,4 @@
+# Google Android devices
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0664", GROUP="adb" 
+# Asus TF701T
+SUBSYSTEM=="usb", ATTR{idVendor}=="0b05", ATTR{idProduct}=="4ca1", MODE="0664", GROUP="adb" 
