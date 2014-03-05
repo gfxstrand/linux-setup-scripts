@@ -11,14 +11,12 @@
 # GNOME essentials
 yum -y install gnome-tweak-tool epiphany
 
-# Install wine for Microsoft Office etc.
-yum -y install wine
+# Install wine and mono for windows apps.
+yum -y install wine mono-devel
 
-yum -y install gimp
+# Graphical tools
+yum -y install gimp inkscape
 
 # Unfortunately, I really need some sort of office
 yum -y install libreoffice
-
-# Required for financial and other stuff
-yum -y install gnucash mono-devel
 

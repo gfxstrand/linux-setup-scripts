@@ -9,7 +9,7 @@
 #
 # To be run as root.
 
-# Install zsh, git, and vim.  The essential tools for life.
-yum -y install zsh vim-X11 vim-enhanced git
+# Install zsh, screen, git, and vim.  The essential tools for life.
+yum -y install zsh screen vim-X11 vim-enhanced git
 chsh -s /bin/zsh jason
 
