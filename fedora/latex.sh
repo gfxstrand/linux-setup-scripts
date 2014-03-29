@@ -15,5 +15,6 @@ yum -y install texlive-latex
 yum -y install perl-MD5 latexmk
 
 # Install various aditional LaTeX packages
-yum -y install texlive-sectsty texlive-diagmac2 texlive-amsrefs
+yum -y install texlive-sectsty texlive-diagmac2 texlive-amsrefs \
+               texlive-moderncv
 
