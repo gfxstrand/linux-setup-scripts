@@ -1,0 +1,19 @@
+[user]
+	name = Jason Ekstrand
+	email = jason@jlekstrand.net
+
+[core]
+	editor = vim
+
+[sendemail]
+	smtpencryption = tls
+	smtpserver = smtp.gmail.com
+	smtpuser = jason@jlekstrand.net
+	smtpserverport = 587
+#	smtpsslcertpath = "/etc/pki/tls/certs/ca-bundle.crt"
+#
+[push]
+	default = simple
+
+[apply]
+	whitespace = fix
