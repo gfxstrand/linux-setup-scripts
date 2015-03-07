@@ -14,7 +14,11 @@ yum -y install texlive-latex
 # Install latexmk
 yum -y install perl-MD5 latexmk
 
+# Install more LaTeX fonts
+yum -y install texlive-collecction-fontsrecommended \
+               texlive-collecction-fontsextra
+
 # Install various aditional LaTeX packages
 yum -y install texlive-sectsty texlive-diagmac2 texlive-amsrefs \
-               texlive-moderncv
+               texlive-moderncv texlive-beamer texlive-jknapltx
 
