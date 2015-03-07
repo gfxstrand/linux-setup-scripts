@@ -16,6 +16,7 @@ yum-builddep -y mesa
 
 # Install piglit mesa dependancies
 yum-builddep -y piglit
+yum -y install python-mako expat-devel bison byacc flex
 yum -y install ninja-build mesa-libEGL-devel mesa-libgbm-devel
 
 # Enable rendernodes and disable the command parser on boot
