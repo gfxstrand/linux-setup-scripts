@@ -19,13 +19,13 @@ ORACLE_JAVA_VERSION=6u45
 cp `dirname $0`/51-android.rules /etc/udev/rules.d/
 
 # Install OpenJDK
-yum -y install java-1.7.0-openjdk java-1.7.0-openjdk-devel
+$YUM -y install java-1.7.0-openjdk java-1.7.0-openjdk-devel
 
 # Install tools required for building apps
-yum -y install ant
+$YUM -y install ant
 
 # Install tools required for building the Android OS
-yum -y install bison flex gperf ccache
+$YUM -y install bison flex gperf ccache
 
 # Install Oracle Java6 JRE and JDK
 sh ${ORACLE_JAVA_PATH}/jre-${ORACLE_JAVA_VERSION}-linux-x64-rpm.bin

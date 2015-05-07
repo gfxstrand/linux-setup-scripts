@@ -9,7 +9,7 @@
 # To be run as root.
 
 # Install zsh, git, and vim.  The essential tools for life.
-yum -y install openssh-server
+$YUM -y install openssh-server
 systemctl start sshd.service
 systemctl enable sshd.service
 

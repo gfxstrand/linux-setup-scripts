@@ -9,16 +9,16 @@
 # To be run as root.
 
 # Install texlive
-yum -y install texlive-latex
+$YUM -y install texlive-latex
 
 # Install latexmk
-yum -y install perl-MD5 latexmk
+$YUM -y install perl-MD5 latexmk
 
 # Install more LaTeX fonts
-yum -y install texlive-collecction-fontsrecommended \
-               texlive-collecction-fontsextra
+$YUM -y install texlive-collecction-fontsrecommended \
+                texlive-collecction-fontsextra
 
 # Install various aditional LaTeX packages
-yum -y install texlive-sectsty texlive-diagmac2 texlive-amsrefs \
-               texlive-moderncv texlive-beamer texlive-jknapltx
+$YUM -y install texlive-sectsty texlive-diagmac2 texlive-amsrefs \
+                texlive-moderncv texlive-beamer texlive-jknapltx
 

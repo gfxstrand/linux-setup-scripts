@@ -9,14 +9,14 @@
 # To be run as root.
 
 # GNOME essentials
-yum -y install gnome-tweak-tool epiphany
+$YUM -y install gnome-tweak-tool epiphany
 
 # Install wine and mono for windows apps.
-yum -y install wine mono-devel
+$YUM -y install wine mono-devel
 
 # Graphical tools
-yum -y install gimp inkscape
+$YUM -y install gimp inkscape
 
 # Unfortunately, I really need some sort of office
-yum -y install libreoffice
+$YUM -y install libreoffice
 

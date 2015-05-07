@@ -9,14 +9,14 @@
 # To be run as root.
 
 # Install basic tools for software development
-yum -y group install "Development Tools"
+$YUM -y group install "Development Tools"
 
 # Install other development tools
-yum -y install gdb valgrind strace gcc-c++
+$YUM -y install gdb valgrind strace gcc-c++
 
 # Install autotools and CMake
-yum -y install automake autoconf libtool cmake
+$YUM -y install automake autoconf libtool cmake
 
 # This is for submitting patches
-yum -y install git-email
+$YUM -y install git-email
 

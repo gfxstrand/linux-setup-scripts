@@ -10,6 +10,6 @@
 # To be run as root.
 
 # Install zsh, screen, git, and vim.  The essential tools for life.
-yum -y install zsh screen vim-X11 vim-enhanced git
+$YUM -y install zsh screen vim-X11 vim-enhanced git
 chsh -s /bin/zsh jason
 
