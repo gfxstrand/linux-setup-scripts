@@ -13,6 +13,8 @@
 
 # Install mesa dependancies
 yum-builddep -y mesa
+$YUM -y install nettle-devel libdrm-devel systemd-devel \
+        libpciaccess-devel install llvm-static
 
 # Install piglit mesa dependancies
 yum-builddep -y piglit
