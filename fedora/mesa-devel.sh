@@ -25,14 +25,3 @@ yum-builddep -y piglit
 $YUM -y install waffle-devel ninja-build mesa-libEGL-devel \
                 mesa-libgbm-devel libcaca-devel
 
-# Enable rendernodes and disable the command parser on boot
-sed -i -e 's/GRUB_CMDLINE_LINUX="\(.*\)"/GRUB_CMDLINE_LINUX="\1 drm.rnodes=1 i915.enable_cmd_parser=0"/' /etc/default/grub
-
-# Re-run grub to make the new options actually happen
-if [ -L /etc/grub2-efi.cfg ]; then
-    grub2-mkconfig -o /etc/grub2-efi.cfg
-fi
-if [ -L /etc/grub2.cfg ]; then
-    grub2-mkconfig -o /etc/grub2.cfg
-fi
-
