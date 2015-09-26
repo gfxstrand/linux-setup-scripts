@@ -51,6 +51,7 @@ set autoindent
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
+
 set expandtab
 
 set incsearch
@@ -60,3 +61,7 @@ let g:vim_markdown_folding_disabled=1
 let g:pandoc_no_folding=1
 let g:pandoc_use_hard_wraps = 1
 
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+match ExtraWhitespace /\s\+$/
+
+:inoremap jk <esc>

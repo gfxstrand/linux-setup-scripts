@@ -17,8 +17,11 @@ DIRSTACKSIZE=10
 
 #==============================================================================
 # Completion
-autoload -Uz compinit
+autoload -Uz compinit bashcompinit
 compinit
+bashcompinit
+
+source ${HOME}/projects/crucible/misc/crucible-completion.bash
 
 # match uppercase from lowercase
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -73,20 +76,11 @@ fi
 
 #==============================================================================
 # Aliases
-VIM_LESS="/usr/share/vim/vim74/macros/less.sh"
-
-alias less="$VIM_LESS"
 alias vim="vimx"
-
-export MANPAGER="/bin/sh -c \"col -bpx | iconv -c | \
-    $VIM_LESS -c 'set ft=man nomod nolist titlestring=MANPAGE' -\""
-
-alias matlab="/home/jason/.matlab/bin/matlab -nodesktop"
 
 #==============================================================================
 # Environment variables
 #export PAGER='less'
-export PAGER="$VIM_LESS"
 export EDITOR='vim'
 export VISUAL='vim'
 
@@ -105,6 +99,7 @@ wayland-env() {
     export LD_LIBRARY_PATH=$WLD/lib
     export PKG_CONFIG_PATH=$WLD/lib/pkgconfig:$WLD/share/pkgconfig
     export ACLOCAL="aclocal -I $WLD/share/aclocal"
+    export PATH=$WLD/bin:$PATH
 }
 
 export USE_CCACHE=1
