@@ -12,7 +12,7 @@
 `dirname $0`/devel.sh
 
 # Install useful tools
-$YUM -y install apitrace
+$YUM -y install apitrace valgrind-devel
 
 # Install mesa dependancies
 yum-builddep -y mesa
@@ -25,3 +25,5 @@ yum-builddep -y piglit
 $YUM -y install waffle-devel ninja-build mesa-libEGL-devel \
                 mesa-libgbm-devel libcaca-devel
 
+# Install crucible mesa dependancies
+$YUM -y install asciidoc ImageMagick
