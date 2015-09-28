@@ -4,7 +4,7 @@
 # This set of scripts sets up a new fedora install to my personal tastes
 # including default software installs, shell configuration, etc.
 #
-# This particular script sets up the machine for Wayland development.
+# This particular script sets up the machine for Mesa development.
 #
 # To be run as root.
 
