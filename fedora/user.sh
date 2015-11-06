@@ -13,3 +13,5 @@
 $YUM -y install zsh screen vim-X11 vim-enhanced git
 chsh -s /bin/zsh jason
 
+# Install dependencies for dirvish
+$YUM -y install perl-Time-ParseDate perl-Time-Period
