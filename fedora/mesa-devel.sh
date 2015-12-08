@@ -26,4 +26,4 @@ $YUM -y install waffle-devel ninja-build mesa-libEGL-devel \
                 mesa-libgbm-devel libcaca-devel
 
 # Install crucible mesa dependancies
-$YUM -y install asciidoc ImageMagick
+$YUM -y install asciidoc ImageMagick libxml2-devel
