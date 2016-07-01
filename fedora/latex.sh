@@ -15,8 +15,8 @@ $YUM -y install texlive-latex
 $YUM -y install perl-MD5 latexmk
 
 # Install more LaTeX fonts
-$YUM -y install texlive-collecction-fontsrecommended \
-                texlive-collecction-fontsextra
+$YUM -y install texlive-collection-fontsrecommended \
+                texlive-collection-fontsextra
 
 # Install various aditional LaTeX packages
 $YUM -y install texlive-sectsty texlive-diagmac2 texlive-amsrefs \
