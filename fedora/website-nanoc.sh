@@ -10,10 +10,11 @@
 # To be run as the regular user.
 
 # This is needed for compiling ruby gems
-yum -y group install "Development Tools"
+sudo $YUM -y group install "Development Tools"
+sudo $YUM -y install redhat-rpm-config
 
 # Install ruby and other tools
-sudo yum -y install rubygems ruby-devel pandoc python-pygments
+sudo $YUM -y install rubygems ruby-devel pandoc python-pygments
 
 # Install the required gems
 gem install nanoc adsf
