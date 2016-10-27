@@ -18,7 +18,8 @@ $YUM -y install apitrace valgrind-devel
 yum-builddep -y mesa
 $YUM -y install python-mako expat-devel bison byacc flex nettle-devel \
                 libdrm-devel systemd-devel libpciaccess-devel llvm-static \
-                libwayland-client-devel libwayland-server-devel
+                libwayland-client-devel libwayland-server-devel \
+                libxshmfence-devel
 
 # Install piglit mesa dependancies
 yum-builddep -y piglit
@@ -26,4 +27,4 @@ $YUM -y install waffle-devel ninja-build mesa-libEGL-devel \
                 mesa-libgbm-devel libcaca-devel
 
 # Install crucible mesa dependancies
-$YUM -y install asciidoc ImageMagick libxml2-devel
+$YUM -y install asciidoc libxml2-devel opencv-python
