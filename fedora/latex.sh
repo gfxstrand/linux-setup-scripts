@@ -20,5 +20,6 @@ $YUM -y install texlive-collection-fontsrecommended \
 
 # Install various aditional LaTeX packages
 $YUM -y install texlive-sectsty texlive-diagmac2 texlive-amsrefs \
-                texlive-moderncv texlive-beamer texlive-jknapltx
+                texlive-moderncv texlive-beamer texlive-jknapltx \
+                texlive-xetex texlive-mathspec texlive-euenc
 
