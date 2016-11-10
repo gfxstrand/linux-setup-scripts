@@ -14,6 +14,9 @@
 # Install useful tools
 $YUM -y install apitrace valgrind-devel
 
+# Install the Vulkan loader
+$YUM -y install vulkan-devel
+
 # Install mesa dependancies
 yum-builddep -y mesa
 $YUM -y install python-mako expat-devel bison byacc flex nettle-devel \
