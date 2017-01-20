@@ -12,7 +12,7 @@
 $YUM -y group install "Development Tools"
 
 # Install other development tools
-$YUM -y install gdb valgrind strace gcc-c++ tig
+$YUM -y install gdb valgrind strace clang gcc-c++ tig
 
 # Install autotools and CMake
 $YUM -y install automake autoconf libtool cmake

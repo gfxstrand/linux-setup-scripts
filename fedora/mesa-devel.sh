@@ -22,7 +22,7 @@ yum-builddep -y mesa
 $YUM -y install python-mako expat-devel bison byacc flex nettle-devel \
                 libdrm-devel systemd-devel libpciaccess-devel llvm-static \
                 libwayland-client-devel libwayland-server-devel \
-                libxshmfence-devel
+                libxshmfence-devel llvm-devel
 
 # Install piglit mesa dependancies
 yum-builddep -y piglit
