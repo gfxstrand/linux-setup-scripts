@@ -10,4 +10,4 @@
 # To be run as root.
 
 # Install dependencies for setting up VPN
-$YUM -y install python-PKI NetworkManager-openconnect-gnome
+$YUM -y install tsocks python-PKI NetworkManager-openconnect-gnome
