@@ -27,7 +27,7 @@ $YUM -y install python-mako expat-devel bison byacc flex nettle-devel \
 # Install piglit mesa dependancies
 yum-builddep -y piglit
 $YUM -y install waffle-devel ninja-build mesa-libEGL-devel \
-                mesa-libgbm-devel libcaca-devel \
+                mesa-libwayland-egl-devel mesa-libgbm-devel libcaca-devel \
                 python3-numpy python3-simplejson python3-lxml
 
 # Install crucible mesa dependancies

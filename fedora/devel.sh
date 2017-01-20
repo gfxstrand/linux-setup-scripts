@@ -11,8 +11,11 @@
 # Install basic tools for software development
 $YUM -y group install "Development Tools"
 
+# This is needed for building some things.  I have no idea why.
+$YUM -y redhat-rpm-config
+
 # Install other development tools
-$YUM -y install gdb valgrind strace clang gcc-c++ tig
+$YUM -y install gdb valgrind strace ccache clang gcc-c++ tig
 
 # Install autotools and CMake
 $YUM -y install automake autoconf libtool cmake
