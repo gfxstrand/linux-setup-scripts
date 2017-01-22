@@ -8,4 +8,5 @@
 #
 # To be run as root.
 
-$YUM -y install isync msmtp notmuch notmuch-vim ruby-notmuch elinks
+$YUM -y install isync msmtp notmuch notmuch-vim ruby-notmuch elinks \
+        python2-notmuch python2-docopt
