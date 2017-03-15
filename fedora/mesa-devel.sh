@@ -17,6 +17,10 @@ $YUM -y install apitrace valgrind-devel
 # Install the Vulkan loader
 $YUM -y install vulkan-devel
 
+# Dependencies for libdrm and intel-gpu-tools
+$YUM -y install xorg-x11-util-macros kmod-devel procps-ng-devel \
+                libunwind-devel
+
 # Install mesa dependancies
 yum-builddep -y mesa
 $YUM -y install python-mako expat-devel bison byacc flex nettle-devel \
@@ -28,7 +32,8 @@ $YUM -y install python-mako expat-devel bison byacc flex nettle-devel \
 yum-builddep -y piglit
 $YUM -y install waffle-devel ninja-build mesa-libEGL-devel \
                 mesa-libwayland-egl-devel mesa-libgbm-devel libcaca-devel \
-                python3-numpy python3-simplejson python3-lxml
+                python3-numpy python3-simplejson python3-lxml \
+                libxkbcommon-devel
 
 # Install crucible mesa dependancies
 $YUM -y install asciidoc libxml2-devel opencv-python
