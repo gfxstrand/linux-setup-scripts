@@ -22,14 +22,14 @@ $YUM -y install xorg-x11-util-macros kmod-devel procps-ng-devel \
                 libunwind-devel
 
 # Install mesa dependancies
-yum-builddep -y mesa
+$YUM builddep -y mesa
 $YUM -y install python-mako expat-devel bison byacc flex nettle-devel \
                 libdrm-devel systemd-devel libpciaccess-devel llvm-static \
                 libwayland-client-devel libwayland-server-devel \
                 libxshmfence-devel llvm-devel
 
 # Install piglit mesa dependancies
-yum-builddep -y piglit
+$YUM builddep -y piglit
 $YUM -y install waffle-devel ninja-build mesa-libEGL-devel \
                 mesa-libwayland-egl-devel mesa-libgbm-devel libcaca-devel \
                 python3-numpy python3-simplejson python3-lxml \
