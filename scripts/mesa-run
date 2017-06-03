@@ -1,0 +1,46 @@
+#! /bin/sh
+
+# The default is the debug build
+WORKTREE_PATH="${HOME}/projects/mesa"
+MESA_PATH="${WORKTREE_PATH}/master"
+EXTRA_LIBS_PATH="${HOME}/.local/mesa-dev"
+LIBDIR_SUFFIX="lib64"
+
+case $1 in
+"-w")
+    # This simply specifies a workdir name
+    shift
+    MESA_PATH="${WORKTREE_PATH}/${1}"
+    shift
+    ;;
+esac
+
+case $1 in
+"--vk-validate")
+    export VK_INSTANCE_LAYERS=VK_LAYER_LUNARG_standard_validation
+    export VK_DEVICE_LAYERS=VK_LAYER_LUNARG_standard_validation
+    shift
+    ;;
+esac
+
+if [ -n "${LD_LIBRARY_PATH}" ]; then
+    LD_LIBRARY_PATH="${EXTRA_LIBS_PATH}/${LIBDIR_SUFFIX}:${LD_LIBRARY_PATH}"
+else
+    LD_LIBRARY_PATH="${EXTRA_LIBS_PATH}/${LIBDIR_SUFFIX}"
+fi
+
+if [ -n "${MESA_PATH}" ]; then
+    MESA_LIB_PATH="${MESA_PATH}/${LIBDIR_SUFFIX}"
+
+    LD_LIBRARY_PATH="${MESA_LIB_PATH}:${LD_LIBRARY_PATH}"
+    if [ -z "${MESA_DRIVERS_PATH}" ]; then
+        MESA_DRIVERS_PATH="${MESA_LIB_PATH}"
+    fi
+    export LIBGL_DRIVERS_PATH="${MESA_DRIVERS_PATH}"
+    export GBM_DRIVERS_PATH="${MESA_DRIVERS_PATH}"
+    export VK_ICD_FILENAMES="${MESA_PATH}/src/intel/vulkan/dev_icd.json"
+fi
+
+export LD_LIBRARY_PATH
+
+exec "$@"
