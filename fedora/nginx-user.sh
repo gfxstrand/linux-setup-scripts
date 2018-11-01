@@ -22,6 +22,7 @@ setsebool -P httpd_enable_homedirs true
 chmod o+r /home/jason
 
 # Allow HTTP to go through the firewall
+firewall-cmd --add-service=http
 firewall-cmd --permanent --add-service=http
 
 # Enable and start nginx
