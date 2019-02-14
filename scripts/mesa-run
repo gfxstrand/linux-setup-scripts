@@ -30,15 +30,17 @@ else
 fi
 
 if [ -n "${MESA_PATH}" ]; then
-    MESA_LIB_PATH="${MESA_PATH}/${LIBDIR_SUFFIX}"
+    MESA_LIB_PATH="${MESA_PATH}/_install/${LIBDIR_SUFFIX}"
 
     LD_LIBRARY_PATH="${MESA_LIB_PATH}:${LD_LIBRARY_PATH}"
     if [ -z "${MESA_DRIVERS_PATH}" ]; then
-        MESA_DRIVERS_PATH="${MESA_LIB_PATH}"
+        MESA_DRIVERS_PATH="${MESA_LIB_PATH}/dri"
     fi
     export LIBGL_DRIVERS_PATH="${MESA_DRIVERS_PATH}"
     export GBM_DRIVERS_PATH="${MESA_DRIVERS_PATH}"
-    export VK_ICD_FILENAMES="${MESA_PATH}/src/intel/vulkan/dev_icd.json"
+    export VK_ICD_FILENAMES="${MESA_PATH}/_install/share/vulkan/icd.d/intel_icd.x86_64.json"
+    #export VK_ICD_FILENAMES="${MESA_PATH}/_install/share/vulkan/icd.d/intel_icd.i686.json"
+    export OCL_ICD_VENDORS="${MESA_PATH}/_install/etc/OpenCL/vendors"
 fi
 
 export LD_LIBRARY_PATH
