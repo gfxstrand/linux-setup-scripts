@@ -1,0 +1,7 @@
+{
+    "file_format_version": "1.0.0", 
+    "ICD": {
+        "library_path": "/home/jason/projects/mesa/_install/lib64/libvulkan_intel.so", 
+        "api_version": "1.0.57"
+    }
+}
