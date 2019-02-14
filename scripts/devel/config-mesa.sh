@@ -23,12 +23,7 @@ function prompt_user {
   esac
 }
 
-if prompt_user "Build with meson?" yes; then
-  BUILD_TOOL=meson
-else
-  echo "Autotools not yet supported"
-  exit 1
-fi
+BUILD_TOOL=meson
 
 if prompt_user "Build a Release build?" no; then
   BUILDTYPE=release
