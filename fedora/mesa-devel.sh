@@ -26,7 +26,15 @@ $YUM builddep -y mesa
 $YUM -y install python-mako expat-devel bison byacc flex nettle-devel \
                 libdrm-devel systemd-devel libpciaccess-devel llvm-static \
                 libwayland-client-devel libwayland-server-devel \
-                libxshmfence-devel llvm-devel
+                libXrandr-devel libxshmfence-devel llvm-devel
+
+# install 32-bit build depnedencies
+$YUM builddep -y mesa-libGL.i686
+$YUM -y install mesa-libwayland-egl-devel.i686 wayland-devel.i686 \
+                libXext-devel.i686 libXdamage-devel.i686 \
+                libXfixes-devel.i686 libXxf86vm-devel.i686 \
+                libXrandr-devel.i686 \
+                expat-devel.i686 valgrind-devel.i686
 
 # Install piglit mesa dependancies
 $YUM builddep -y piglit
