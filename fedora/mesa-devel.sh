@@ -33,7 +33,7 @@ $YUM builddep -y mesa-libGL.i686
 $YUM -y install mesa-libwayland-egl-devel.i686 wayland-devel.i686 \
                 libXext-devel.i686 libXdamage-devel.i686 \
                 libXfixes-devel.i686 libXxf86vm-devel.i686 \
-                libXrandr-devel.i686 \
+                libXrandr-devel.i686 wayland-protocols-devel \
                 expat-devel.i686 valgrind-devel.i686
 
 # Install piglit mesa dependancies
