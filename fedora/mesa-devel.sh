@@ -12,7 +12,7 @@
 `dirname $0`/devel.sh
 
 # Install useful tools
-$YUM -y install apitrace valgrind-devel
+$YUM -y install apitrace valgrind-devel rlwrap
 
 # Install the Vulkan loader
 $YUM -y install vulkan-devel
