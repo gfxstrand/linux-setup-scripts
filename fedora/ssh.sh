@@ -8,8 +8,10 @@
 #
 # To be run as root.
 
+DNF=${DNF-dnf}
+
 # Install zsh, git, and vim.  The essential tools for life.
-$YUM -y install openssh-server
+$DNF -y install openssh-server
 systemctl start sshd.service
 systemctl enable sshd.service
 

@@ -9,9 +9,11 @@
 #
 # To be run as root.
 
+DNF=${DNF-dnf}
+
 # Install zsh, screen, git, and vim.  The essential tools for life.
-$YUM -y install zsh screen vim-X11 vim-enhanced git
+$DNF -y install zsh screen vim-X11 vim-enhanced git
 chsh -s /bin/zsh jason
 
 # Install dependencies for dirvish
-$YUM -y install perl-Time-ParseDate perl-Time-Period
+$DNF -y install perl-Time-ParseDate perl-Time-Period

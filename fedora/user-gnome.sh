@@ -8,15 +8,17 @@
 #
 # To be run as root.
 
+DNF=${DNF-dnf}
+
 # GNOME essentials
-$YUM -y install gnome-tweak-tool epiphany
+$DNF -y install gnome-tweak-tool epiphany
 
 # Install wine and mono for windows apps.
-$YUM -y install wine mono-devel
+$DNF -y install wine mono-devel
 
 # Graphical tools
-$YUM -y install gimp inkscape
+$DNF -y install gimp inkscape
 
 # Unfortunately, I really need some sort of office
-$YUM -y install libreoffice
+$DNF -y install libreoffice
 

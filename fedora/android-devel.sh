@@ -9,6 +9,8 @@
 #
 # To be run as root.
 
+DNF=${DNF-dnf}
+
 # Install devel stuff as well
 `dirname $0`/devel.sh
 
@@ -19,13 +21,13 @@ ORACLE_JAVA_VERSION=6u45
 cp `dirname $0`/51-android.rules /etc/udev/rules.d/
 
 # Install OpenJDK
-$YUM -y install java-1.7.0-openjdk java-1.7.0-openjdk-devel
+$DNF -y install java-1.7.0-openjdk java-1.7.0-openjdk-devel
 
 # Install tools required for building apps
-$YUM -y install ant
+$DNF -y install ant
 
 # Install tools required for building the Android OS
-$YUM -y install bison flex gperf ccache
+$DNF -y install bison flex gperf ccache
 
 # Install Oracle Java6 JRE and JDK
 sh ${ORACLE_JAVA_PATH}/jre-${ORACLE_JAVA_VERSION}-linux-x64-rpm.bin

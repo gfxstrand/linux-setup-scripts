@@ -8,18 +8,20 @@
 #
 # To be run as root.
 
+DNF=${DNF-dnf}
+
 # Install basic tools for software development
-$YUM -y group install "Development Tools"
+$DNF -y group install "Development Tools"
 
 # This is needed for building some things.  I have no idea why.
-$YUM -y redhat-rpm-config
+$DNF -y redhat-rpm-config
 
 # Install other development tools
-$YUM -y install gdb valgrind strace ccache clang gcc-c++ tig
+$DNF -y install gdb valgrind strace ccache clang gcc-c++ tig
 
 # Install autotools and CMake
-$YUM -y install automake autoconf libtool cmake
+$DNF -y install automake autoconf libtool cmake
 
 # This is for submitting patches
-$YUM -y install git-email
+$DNF -y install git-email
 
