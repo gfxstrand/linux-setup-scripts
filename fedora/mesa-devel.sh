@@ -47,3 +47,6 @@ $DNF -y install waffle-devel ninja-build mesa-libEGL-devel \
 
 # Install crucible mesa dependancies
 $DNF -y install asciidoc libxml2-devel opencv-python
+
+# Install RenderDoc dependencies
+$DNF -y install python3-devel qt5-devel xcb-util-keysyms-devel
