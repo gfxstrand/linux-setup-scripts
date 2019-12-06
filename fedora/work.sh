@@ -9,5 +9,7 @@
 #
 # To be run as root.
 
+DNF=${DNF-dnf}
+
 # Install dependencies for setting up VPN
-$YUM -y install tsocks python-PKI NetworkManager-openconnect-gnome
+$DNF -y install tsocks python-PKI NetworkManager-openconnect-gnome

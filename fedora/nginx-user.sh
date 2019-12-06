@@ -9,8 +9,10 @@
 #
 # To be run as root.
 
+DNF=${DNF-dnf}
+
 # Install nginx
-$YUM -y install nginx
+$DNF -y install nginx
 
 # Install the nginx config file
 cp nginx-user.conf /etc/nginx/nginx.conf

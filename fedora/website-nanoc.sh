@@ -9,12 +9,14 @@
 #
 # To be run as the regular user.
 
+DNF=${DNF-dnf}
+
 # This is needed for compiling ruby gems
-sudo $YUM -y group install "Development Tools"
-sudo $YUM -y install redhat-rpm-config
+sudo $DNF -y group install "Development Tools"
+sudo $DNF -y install redhat-rpm-config
 
 # Install ruby and other tools
-sudo $YUM -y install rubygems ruby-devel pandoc python-pygments
+sudo $DNF -y install rubygems ruby-devel pandoc python-pygments
 
 # Install the required gems
 gem install nanoc adsf
