@@ -53,9 +53,9 @@ if [[ "$terminfo[colors]" -ge 8 ]]; then
 	colors
 
 	# Set the prompt with color
-	PS1="%B%{${fg[green]}%}%n@%m%{${fg[white]}%}%b%# "
-	RPS1="%B%{${fg[blue]}%}%~%(0?.. %{${fg[red]}%}(%?%))%b"
-	PS2="%B%{${fg[green]}%}%1_%b%{${fg[white]}%}> "
+	PS1="%B%F{green}%n@%m%F{bg-white}%b%# "
+	RPS1="%B%F{blue}%~%(0?.. %F{red}(%?%))%b"
+	PS2="%B%F{green}%1_%b%F{bg-white}> "
 
 	# Use color in ls
 	eval "`dircolors -b`"
