@@ -52,10 +52,13 @@ autoload -U zsh/terminfo
 if [[ "$terminfo[colors]" -ge 8 ]]; then
 	colors
 
+    # Hash the host name into a color to use for the command prompt
+    host_color=$(hostname | sum | awk -v ncolors=${terminfo[colors]} '{print 1 + ($1 % (ncolors - 1))}')
+
 	# Set the prompt with color
-	PS1="%B%F{green}%n@%m%F{bg-white}%b%# "
+	PS1="%B%F{${host_color}}%n@%m%F{bg-white}%b%# "
 	RPS1="%B%F{blue}%~%(0?.. %F{red}(%?%))%b"
-	PS2="%B%F{green}%1_%b%F{bg-white}> "
+	PS2="%B%F{${host_color}}%1_%b%F{bg-white}> "
 
 	# Use color in ls
 	eval "`dircolors -b`"
