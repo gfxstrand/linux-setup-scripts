@@ -28,14 +28,17 @@ $DNF builddep -y mesa
 $DNF -y install python-mako expat-devel bison byacc flex nettle-devel \
                 libdrm-devel systemd-devel libpciaccess-devel llvm-static \
                 libwayland-client-devel libwayland-server-devel \
+                wayland-protocols-devel \
                 libXrandr-devel libxshmfence-devel llvm-devel
 
 # install 32-bit build depnedencies
 $DNF builddep -y mesa-libGL.i686
-$DNF -y install mesa-libwayland-egl-devel.i686 wayland-devel.i686 \
-                libXext-devel.i686 libXdamage-devel.i686 \
+$DNF -y install glibc-devel.i686 expat-devel.i686 \
+                mesa-libwayland-egl-devel.i686 wayland-devel.i686 \
+                libX11-devel.i686 libXext-devel.i686 libXdamage-devel.i686 \
                 libXfixes-devel.i686 libXxf86vm-devel.i686 \
-                libXrandr-devel.i686 wayland-protocols-devel \
+                libXrandr-devel.i686 libxcb-devel.i686 xshmfence-devel.i686 \
+                libwayland-devel.i686 \
                 expat-devel.i686 valgrind-devel.i686
 
 # Install piglit mesa dependancies
@@ -46,10 +49,15 @@ $DNF -y install waffle-devel ninja-build mesa-libEGL-devel \
                 libxkbcommon-devel
 
 # Install crucible mesa dependancies
-$DNF -y install asciidoc libxml2-devel opencv-python
+$DNF -y install asciidoc libxml2-devel python3-opencv
+
+# Install shader-db dependancies
+$DNF -y install python3-scipy python3-attrs
 
 # Install Vulkan CTS
-$DNF -y install mesa-libGLES-devel libSM-devel
+$DNF -y install mesa-libGLES-devel libSM-devel \
+                mesa-libGL-devel.i686 mesa-libGLES-devel.i686 \
+                valgrind-devel.i686 libpng-devel.i686
 
 # Install RenderDoc dependencies
 $DNF -y install python3-devel qt5-devel xcb-util-keysyms-devel
