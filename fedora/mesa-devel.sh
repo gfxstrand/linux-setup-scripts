@@ -28,8 +28,8 @@ $DNF builddep -y mesa
 $DNF -y install python-mako expat-devel bison byacc flex nettle-devel \
                 libdrm-devel systemd-devel libpciaccess-devel llvm-static \
                 libwayland-client-devel libwayland-server-devel \
-                wayland-protocols-devel libXxf86vm-devel \
-                libXrandr-devel libxshmfence-devel llvm-devel
+                wayland-protocols-devel libXxf86vm-devel libXfixes-devel \
+                libXdamage-devel libXrandr-devel libxshmfence-devel llvm-devel
 
 # install 32-bit build depnedencies
 $DNF builddep -y mesa-libGL.i686
