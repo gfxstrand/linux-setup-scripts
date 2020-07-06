@@ -20,7 +20,7 @@ $DNF -y redhat-rpm-config
 $DNF -y install gdb valgrind strace ccache clang gcc-c++ tig
 
 # Install autotools and CMake
-$DNF -y install automake autoconf libtool cmake
+$DNF -y install meson ninja automake autoconf libtool cmake
 
 # This is for submitting patches
 $DNF -y install git-email

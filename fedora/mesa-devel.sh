@@ -17,7 +17,7 @@ DNF=${DNF-dnf}
 $DNF -y install apitrace valgrind-devel rlwrap
 
 # Install the Vulkan loader
-$DNF -y install vulkan-devel
+$DNF -y install vulkan-devel vulkan-tools
 
 # Dependencies for libdrm and intel-gpu-tools
 $DNF -y install xorg-x11-util-macros kmod-devel procps-ng-devel \
@@ -28,7 +28,7 @@ $DNF builddep -y mesa
 $DNF -y install python-mako expat-devel bison byacc flex nettle-devel \
                 libdrm-devel systemd-devel libpciaccess-devel llvm-static \
                 libwayland-client-devel libwayland-server-devel \
-                wayland-protocols-devel \
+                wayland-protocols-devel libXxf86vm-devel \
                 libXrandr-devel libxshmfence-devel llvm-devel
 
 # install 32-bit build depnedencies
