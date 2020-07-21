@@ -46,7 +46,7 @@ $DNF builddep -y piglit
 $DNF -y install waffle-devel ninja-build mesa-libEGL-devel \
                 mesa-libwayland-egl-devel mesa-libgbm-devel libcaca-devel \
                 python3-numpy python3-simplejson python3-lxml \
-                libxkbcommon-devel
+                libxkbcommon-devel libcaca-devel
 
 # Install crucible mesa dependancies
 $DNF -y install asciidoc libxml2-devel python3-opencv
