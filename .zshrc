@@ -21,7 +21,7 @@ autoload -Uz compinit bashcompinit
 compinit
 bashcompinit
 
-source ${HOME}/projects/crucible/misc/crucible-completion.bash
+#source ${HOME}/projects/crucible/misc/crucible-completion.bash
 
 # match uppercase from lowercase
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -79,7 +79,7 @@ fi
 
 #==============================================================================
 # Aliases
-alias vim="vimx"
+#alias vim="vimx"
 
 #==============================================================================
 # Environment variables
@@ -87,7 +87,7 @@ alias vim="vimx"
 export EDITOR='vim'
 export VISUAL='vim'
 
-export PATH="/home/jason/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 #==============================================================================
 # Stuff for Android Development
