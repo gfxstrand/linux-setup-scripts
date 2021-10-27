@@ -33,12 +33,12 @@ $DNF -y install python-mako expat-devel bison byacc flex nettle-devel \
 
 # install 32-bit build depnedencies
 $DNF builddep -y mesa-libGL.i686
-$DNF -y install glibc-devel.i686 expat-devel.i686 \
-                mesa-libwayland-egl-devel.i686 wayland-devel.i686 \
+$DNF -y install glibc-devel.i686 expat-devel.i686 libdrm-devel.i686 \
+                wayland-devel.i686 \
                 libX11-devel.i686 libXext-devel.i686 libXdamage-devel.i686 \
                 libXfixes-devel.i686 libXxf86vm-devel.i686 \
-                libXrandr-devel.i686 libxcb-devel.i686 xshmfence-devel.i686 \
-                libwayland-devel.i686 \
+                libXrandr-devel.i686 libxcb-devel.i686 libxshmfence-devel.i686 \
+                wayland-devel.i686 zlib-devel.i686 \
                 expat-devel.i686 valgrind-devel.i686
 
 # Install piglit mesa dependancies
