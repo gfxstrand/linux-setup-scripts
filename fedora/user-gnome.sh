@@ -14,7 +14,7 @@ DNF=${DNF-dnf}
 $DNF -y install gnome-tweak-tool epiphany
 
 # Install wine and mono for windows apps.
-$DNF -y install wine mono-devel
+$DNF -y install wine mono-devel mono-winforms
 
 # Graphical tools
 $DNF -y install gimp inkscape
