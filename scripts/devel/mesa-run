@@ -3,7 +3,7 @@
 # The default is the debug build
 WORKTREE_PATH="${HOME}/projects/mesa"
 MESA_PATH="${WORKTREE_PATH}/master"
-EXTRA_LIBS_PATH="${HOME}/.local/mesa-dev"
+#EXTRA_LIBS_PATH="${HOME}/.local/mesa-dev"
 LIBDIR_SUFFIX="lib64"
 
 while true; do
@@ -15,12 +15,20 @@ while true; do
         shift
         ;;
     "--vk-validate")
-        export VK_INSTANCE_LAYERS=VK_LAYER_LUNARG_standard_validation
-        export VK_DEVICE_LAYERS=VK_LAYER_LUNARG_standard_validation
+        export VK_INSTANCE_LAYERS=VK_LAYER_KHRONOS_validation
+        export VK_DEVICE_LAYERS=VK_LAYER_KHRONOS_validation
         shift
         ;;
     "--iris")
         export MESA_LOADER_DRIVER_OVERRIDE=iris
+        shift
+        ;;
+    "--i965")
+        export MESA_LOADER_DRIVER_OVERRIDE=i965
+        shift
+        ;;
+    "--zink")
+        export MESA_LOADER_DRIVER_OVERRIDE=zink
         shift
         ;;
     *)
@@ -46,6 +54,7 @@ if [ -n "${MESA_PATH}" ]; then
     export GBM_DRIVERS_PATH="${MESA_DRIVERS_PATH}"
     export VK_ICD_FILENAMES="${MESA_PATH}/_install/share/vulkan/icd.d/intel_icd.x86_64.json"
     #export VK_ICD_FILENAMES="${MESA_PATH}/_install/share/vulkan/icd.d/intel_icd.i686.json"
+    export IRIS_ENABLE_CLOVER=1
     export OCL_ICD_VENDORS="${MESA_PATH}/_install/etc/OpenCL/vendors"
 fi
 

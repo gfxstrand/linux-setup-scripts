@@ -4,11 +4,16 @@
 MESA_PATH="/home/jason/projects/mesa"
 EXTRA_LIBS_PATH="/home/jason/.local"
 LIBDIR_SUFFIX="_install/lib64"
+ICD_FILENAME="intel_icd.x86_64.json"
 
 case $1 in
 "--vk-validate")
     export VK_INSTANCE_LAYERS=VK_LAYER_LUNARG_standard_validation
     export VK_DEVICE_LAYERS=VK_LAYER_LUNARG_standard_validation
+    shift
+    ;;
+"--radv")
+    ICD_FILENAME="radeon_icd.x86_64.json"
     shift
     ;;
 "-m32")
@@ -33,7 +38,10 @@ if [ -n "${MESA_PATH}" ]; then
     fi
     export LIBGL_DRIVERS_PATH="${MESA_DRIVERS_PATH}/dri"
     export GBM_DRIVERS_PATH="${MESA_DRIVERS_PATH}/dri"
-    export VK_ICD_FILENAMES="${HOME}/.local/share/intel_icd.x86_64.json"
+    export VK_ICD_FILENAMES="${HOME}/.local/share/${ICD_FILENAME}"
+    export IRIS_ENABLE_CLOVER=1
+    export GALLIUM_PIPE_SEARCH_DIR="${MESA_DRIVERS_PATH}/gallium-pipe"
+    export OCL_ICD_VENDORS="${MESA_PATH}/_install/etc/OpenCL/vendors"
 fi
 
 export LD_LIBRARY_PATH
