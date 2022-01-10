@@ -61,3 +61,6 @@ $DNF -y install mesa-libGLES-devel libSM-devel \
 
 # Install RenderDoc dependencies
 $DNF -y install python3-devel qt5-devel xcb-util-keysyms-devel
+
+# Install kernel dependencies
+$DNF -y install openssl dwarves zstd
