@@ -2,7 +2,7 @@
 
 # The default is the debug build
 WORKTREE_PATH="${HOME}/projects/mesa"
-MESA_PATH="${WORKTREE_PATH}/master"
+MESA_PATH="${WORKTREE_PATH}/main"
 #EXTRA_LIBS_PATH="${HOME}/.local/mesa-dev"
 LIBDIR_SUFFIX="lib64"
 
