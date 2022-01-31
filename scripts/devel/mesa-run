@@ -52,7 +52,29 @@ if [ -n "${MESA_PATH}" ]; then
     fi
     export LIBGL_DRIVERS_PATH="${MESA_DRIVERS_PATH}"
     export GBM_DRIVERS_PATH="${MESA_DRIVERS_PATH}"
-    export VK_ICD_FILENAMES="${MESA_PATH}/_install/share/vulkan/icd.d/intel_icd.x86_64.json"
+
+    if [ -z "$ICD_NAME" ]; then
+        GL_VENDOR=`wflinfo -p gbm -a gl | grep 'OpenGL vendor string'`
+        GL_VENDOR=`echo "$GL_VENDOR" | sed -e 's/OpenGL vendor string: //'`
+        case "$GL_VENDOR" in
+        "Intel")
+            ICD_NAME="intel_icd.x86_64.json"
+            ;;
+        *"Radeon"*)
+            ICD_NAME="radeon_icd.x86_64.json"
+            ;;
+        "Panfrost")
+            ICD_NAME="panfrost_icd.aarch64.json"
+            ;;
+        "Broadcom")
+            ICD_NAME="broadcom_icd.aarch64.json"
+            ;;
+        *)
+            echo "Unknown OpenGL vendor string: $GL_VENDOR"
+        esac
+    fi
+
+    export VK_ICD_FILENAMES="${MESA_PATH}/_install/share/vulkan/icd.d/${ICD_NAME}"
     #export VK_ICD_FILENAMES="${MESA_PATH}/_install/share/vulkan/icd.d/intel_icd.i686.json"
     export IRIS_ENABLE_CLOVER=1
     export OCL_ICD_VENDORS="${MESA_PATH}/_install/etc/OpenCL/vendors"
