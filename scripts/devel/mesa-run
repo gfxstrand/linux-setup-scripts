@@ -38,10 +38,8 @@ while true; do
     esac
 done
 
-if [ -n "${LD_LIBRARY_PATH}" ]; then
+if [ -n "${EXTRA_LIBS_PATH}" ]; then
     LD_LIBRARY_PATH="${EXTRA_LIBS_PATH}/${LIBDIR_SUFFIX}:${LD_LIBRARY_PATH}"
-else
-    LD_LIBRARY_PATH="${EXTRA_LIBS_PATH}/${LIBDIR_SUFFIX}"
 fi
 
 if [ -n "${MESA_PATH}" ]; then
