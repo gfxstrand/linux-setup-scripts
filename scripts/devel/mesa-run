@@ -59,7 +59,7 @@ if [ -n "${MESA_PATH}" ]; then
         "Intel")
             ICD_NAME="intel_icd.x86_64.json"
             ;;
-        *"Radeon"*)
+        "AMD")
             ICD_NAME="radeon_icd.x86_64.json"
             ;;
         "Panfrost")
