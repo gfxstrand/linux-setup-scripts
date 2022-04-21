@@ -22,6 +22,7 @@ compinit
 bashcompinit
 
 #source ${HOME}/projects/crucible/misc/crucible-completion.bash
+source ${HOME}/.local/bin/mesa-run-comp.sh
 
 # match uppercase from lowercase
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
