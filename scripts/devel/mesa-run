@@ -32,6 +32,10 @@ while true; do
         GL_DRIVER_OVERRIDE=zink
         shift
         ;;
+    "--lavapipe")
+        ICD_NAME="lvp_icd.x86_64.json"
+        shift
+        ;;
     *)
         break
         ;;
