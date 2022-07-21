@@ -32,6 +32,10 @@ while true; do
         GL_DRIVER_OVERRIDE=zink
         shift
         ;;
+    "--llvmpipe")
+        export LIBGL_ALWAYS_SOFTWARE=1
+        shift
+        ;;
     "--lavapipe")
         ICD_NAME="lvp_icd.x86_64.json"
         shift
@@ -69,6 +73,11 @@ if [ -n "${MESA_PATH}" ]; then
 
     if [ -n "${GL_DRIVER_OVERRIDE}" ]; then
         export MESA_LOADER_DRIVER_OVERRIDE="$GL_DRIVER_OVERRIDE"
+    fi
+
+    if [ "${GL_DRIVER_OVERRIDE}" = "zink" ] && \
+       echo "${ICD_NAME}" | grep "lvp"; then
+        export LIBGL_ALWAYS_SOFTWARE=1
     fi
 
     export IRIS_ENABLE_CLOVER=1
