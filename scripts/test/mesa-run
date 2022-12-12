@@ -1,8 +1,8 @@
 #! /bin/sh
 
 # The default is the debug build
-MESA_PATH="/home/jason/projects/mesa"
-EXTRA_LIBS_PATH="/home/jason/.local"
+MESA_PATH="${HOME}/projects/mesa"
+EXTRA_LIBS_PATH="${HOME}/.local"
 LIBDIR_SUFFIX="_install/lib64"
 ICD_FILENAME="intel_icd.x86_64.json"
 
