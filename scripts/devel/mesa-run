@@ -82,6 +82,7 @@ if [ -n "${MESA_PATH}" ]; then
 
     export IRIS_ENABLE_CLOVER=1
     export OCL_ICD_VENDORS="${MESA_PATH}/_install/etc/OpenCL/vendors"
+    export PATH="${MESA_PATH}/_install/bin:${PATH}"
 fi
 
 export LD_LIBRARY_PATH
