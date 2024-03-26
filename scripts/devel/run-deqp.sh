@@ -1,6 +1,8 @@
 #! /bin/bash
 
-JOBS=18
+JOBS=36
+
+DEQP_RUNNER="$HOME/projects/deqp-runner/target/release/deqp-runner"
 
 while true; do
     case $1 in
@@ -24,8 +26,6 @@ fi
 dmesg --follow > "${OUTDIR}/dmesg" &
 DMESG_PID="$!"
 
-export NVK_I_WANT_A_BROKEN_VULKAN_DRIVER=1
-
 export MESA_VK_ABORT_ON_DEVICE_LOSS=1
 
 # Disable some codegen optimizations for now
@@ -38,13 +38,14 @@ dEQP-VK.wsi..*
 END
 )
 
-deqp-runner run --deqp ./deqp-vk \
-    --caselist ../../../../../external/vulkancts/mustpass/main/vk-default.txt \
+"${DEQP_RUNNER}" run --deqp ./deqp-vk \
     --jobs "${JOBS}" \
+    --caselist ../../../../../external/vulkancts/mustpass/main/vk-default.txt \
     --skips <(echo "${SKIPS}") \
     --output "${OUTDIR}" \
+    --vk-device-id 1 \
+    --vk-device-id 2 \
     -- \
-    --deqp-vk-device-id=${DEQP_DEVID:-0} \
     --deqp-log-images=disable
 
 kill "${DMESG_PID}"
