@@ -69,7 +69,7 @@ if [[ "$terminfo[colors]" -ge 8 ]]; then
 	zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 	
 	# Use color in grep
-	export GREP_COLOR='01;35'
+	export GREP_COLOR='m=01;35'
 	alias grep="grep --color"
 else
 	# Set the prompt without color
