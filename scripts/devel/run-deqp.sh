@@ -23,6 +23,8 @@ if ! mkdir "${OUTDIR}"; then
     exit 1
 fi
 
+vulkaninfo --text -o "${OUTDIR}/vulkaninfo.txt"
+
 dmesg --follow > "${OUTDIR}/dmesg" &
 DMESG_PID="$!"
 
