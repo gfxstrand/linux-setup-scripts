@@ -13,7 +13,7 @@ DNF=${DNF-dnf}
 
 # Install zsh, screen, git, and vim.  The essential tools for life.
 $DNF -y install zsh screen vim-X11 vim-enhanced git
-chsh -s /bin/zsh jason
+chsh -s /usr/bin/zsh faith
 
 # Install dependencies for dirvish
 $DNF -y install perl-Time-ParseDate perl-Time-Period
