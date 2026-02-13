@@ -1,19 +1,24 @@
 [user]
-	name = Jason Ekstrand
-	email = jason@jlekstrand.net
+	name = Faith Ekstrand
+	email = faith.ekstrand@collabora.com
 
 [core]
 	editor = vim
 
-[sendemail]
-	smtpencryption = tls
-	smtpserver = smtp.gmail.com
-	smtpuser = jason@jlekstrand.net
-	smtpserverport = 587
-#	smtpsslcertpath = "/etc/pki/tls/certs/ca-bundle.crt"
-#
 [push]
 	default = simple
 
 [apply]
 	whitespace = fix
+
+[color]
+	ui = auto
+
+[alias]
+    cite = log -1 --abbrev=12 '--format=%h (\"%s\")'
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
