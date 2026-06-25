@@ -11,14 +11,7 @@
 DNF=${DNF-dnf}
 
 # GNOME essentials
-$DNF -y install gnome-tweak-tool epiphany
-
-# Install wine and mono for windows apps.
-$DNF -y install wine mono-devel mono-winforms
+$DNF -y install gnome-tweak-tool
 
 # Graphical tools
 $DNF -y install gimp inkscape
-
-# Unfortunately, I really need some sort of office
-$DNF -y install libreoffice
-
